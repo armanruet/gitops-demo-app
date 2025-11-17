@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapp-dev              # Name shown in Argo CD UI
+  namespace: argocd             # Argo CD's own namespace
+spec:
+  project: default              # Use default Argo CD project for now
+  source:
+    repoURL: 'https://github.com/armanruet/gitops-demo-app'
+    targetRevision: main        # Branch to track
+    path: overlays/dev          # 👈 Environment folder in your repo
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev              # 👈 Deploy into "dev" namespace
+  syncPolicy:
+    automated:                  # Dev can auto-sync, safe for experimentation
+      prune: true
+      selfHeal: true
