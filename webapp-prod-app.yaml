@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/armanruet/gitops-demo-app'
+    repoURL: 'https://github.com/armanruet/gitops-demo-app.git'
     targetRevision: main
     path: overlays/prod         # 👈 Prod overlay
   destination:

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default              # Use default Argo CD project for now
   source:
-    repoURL: 'https://github.com/armanruet/gitops-demo-app'
+    repoURL: 'https://github.com/armanruet/gitops-demo-app.git'
     targetRevision: main        # Branch to track
     path: overlays/dev          # 👈 Environment folder in your repo
   destination:
